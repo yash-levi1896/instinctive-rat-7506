@@ -3,25 +3,25 @@
      "image":"https://p.rmjo.in/productSquare/7cwdj05s-500x500.jpg",
      "name":"Napster Metal Queen Bed (6x5)",
      "category":"Beds",
-     "price":399
+     "price":[399,299,199]
    },
    {
      "image":"https://p.rmjo.in/productSquare/sm454qim-500x500.jpg",
      "name":"Aurora Wooden Queen Bed (6x5)",
      "category":"Beds",
-     "price":669
+     "price":[669,599,499]
    },
    {
      "image":"https://p.rmjo.in/productSquare/z0b45rr0-500x500.jpg",
      "name":"Napster Metal Single Bed (6x3)",
      "category":"Beds",
-     "price":309
+     "price":[309,259,199]
    },
    {
      "image":"https://p.rmjo.in/productSquare/0pernjgh-500x500.jpg",
      "name":"Aurora Wooden Single Bed (6x3)",
      "category":"Beds",
-     "price":519
+     "price":[519,479,399]
    },
    {
      "image":"https://p.rmjo.in/productSquare/e5qwec0i-500x500.jpg",
@@ -33,60 +33,60 @@
      "image":"https://p.rmjo.in/productSquare/q5cw4jfm-500x500.jpg",
      "name":"Poise Wooden King Bed (6x6)",
      "category":"Beds",
-     "price":839
+     "price":[839,709,599]
    },
    {
      "image":"https://p.rmjo.in/productSquare/gk7ellw1-500x500.jpg",
      "name":"Kipper Wooden Queen Bed (6x5)",
      "category":"Beds",
-     "price":1019
+     "price":[1019,999,899]
    },
    {
      "image":"https://p.rmjo.in/productSquare/jfd4uk64-500x500.jpg",
      "name":"Atticus Wooden Single Platform Bed (6x3)",
      "category":"Beds",
-     "price":419
+     "price":[419,359,299]
    },
    {
      "image":"https://p.rmjo.in/productSquare/0npj0a1d-500x500.jpg",
      "name":"Kipper Wooden Single Bed (6x3)",
      "category":"Beds",
-     "price":559
+     "price":[559,499,399]
    },
    {
      "image":"https://p.rmjo.in/productSquare/pemzyedy-500x500.jpg",
      "name":"Napster Metal Queen Bed (White 6x5)",
      "category":"Beds",
-     "price":609
+     "price":[609,539,409]
    },
    {
     "image":"https://p.rmjo.in/productSquare/pemzyedy-500x500.jpg",
      "name":"Napster Metal Queen Bed (White 6x5)",
      "category":"Beds",
-     "price":609
+     "price":[609,569,499]
    },
    {
     "image":"https://p.rmjo.in/productSquare/9o9eoir3-500x500.jpg",
      "name":"Garfield Ottoman",
      "category":"Beds",
-     "price":189
+     "price":[189,109,89]
    },
    {
     "image":"https://p.rmjo.in/productSquare/smr3l0tl-500x500.jpg",
     "name":"Rex 3-Seater Leather Sofa (Black)",
     "category":"Beds",
-    "price":819
+    "price":[819,759,699]
    },
    {
     "image":"ttps://p.rmjo.in/productSquare/smr3l0tl-500x500.jpg",
     "name":"Felix 1-Seater Fabric Sofa (Blue)",
     "category":"Beds",
-    "price":439
+    "price":[439,399,239]
    },
    {
     "image":"https://p.rmjo.in/productSquare/tqddqxw9-500x500.jpg",
     "name":"Rex 1-Seater Leather Sofa (Black)",
     "category":"Beds",
-    "price":399
+    "price":[399,309,259]
    }
 ]
