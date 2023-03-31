@@ -1,9 +1,25 @@
+.sticky {
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+  }
 nav>div{
     display: flex;
     width:70%;
     border:1px solid red;
     margin: auto;
     justify-content: space-between;
+    margin-bottom: 50px;
+    position: sticky;
+    top: 0;
+}
+nav>div div:nth-child(3)>button{
+    padding:10px;
+    width:100px;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    /* border: none; */
 }
 nav>div div:nth-child(3){
     width: 200px;
@@ -14,16 +30,16 @@ nav>div div:nth-child(3){
 }
 /* search bar */
 .search-box {
-    width: 350px;
+    width: 700px;
     position: relative;
     display: flex;
       bottom: 0;
       left: 0;
       right: 0;
       margin: auto;
-    /* border: 2px solid red; */
-    margin-left: 1050px;
-    margin-top: -30px;
+     border: 2px solid red; 
+    /* margin-left: 105px; */
+    /* margin-top: -30px; */
   }
   
   .search-input {
