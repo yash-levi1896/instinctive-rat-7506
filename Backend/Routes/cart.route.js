@@ -1,15 +1,28 @@
 const express=require('express');
-const {CartModel}=require('../Models/cart.model')
+const {CartModel}=require('../Models/cart.model');
+const jwt=require('jsonwebtoken')
 const cartRoute=express.Router();
 
 cartRoute.get("/",async (req,res)=>{
-    try {
-        const product=await CartModel.find();
-        res.status(200).send(product)
-    } catch (error) {
-        res.status(400).send({msg:error.message})
+    const token=req.headers.authorization.split(' ')[1];
+    //console.log("token",token)
+    if(token){
+        const decoded=jwt.verify(token,'masai');
+    
+   // console.log(decoded)
+    if(decoded.userID){
+        try {
+            const user= await CartModel.find({userID:decoded.userID});
+            res.status(200).send(user)
+        } catch (error) {
+            res.status(400).send({"msg":error.message})
+        } 
     }
+}else{
+    res.status(400).send({"msg":"Please login!"})
+}
 })
+   
 
 cartRoute.post("/add",async (req,res)=>{
     const {name}=req.body;

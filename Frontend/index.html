@@ -29,7 +29,13 @@
         <div>
           <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="font-size: 25px;"></i></a>
           <span id="c-number" style="margin-left: 0px;"></span>
-          <a href="login.html"><button id="log">Log in</button></a>
+          <div class="dropdown">
+            <button id="log"></button>
+            <div id="myDropdown" class="dropdown-content">
+                <button id="logout">Logout</button>
+              </div>
+          </div>
+          
         </div>
         </div> 
     </nav>
@@ -250,18 +256,33 @@
     let token=localStorage.getItem('key');
     const username=localStorage.getItem('key1');
     const namelog=document.getElementById('log');
+    const btnl=document.querySelector('#myDropdown');
+    const end=document.getElementById('logout');
     btn.addEventListener('click',()=>{
         document.documentElement.scrollTop = 0;
     })
     token ? token=token:token="";
     username ?namelog.innerText=username:namelog.innerText='Login';
+    if(namelog.innerText=='Login'){
+        namelog.addEventListener('click',()=>{
+            location.href='login.html'
+        })
+    }else{
+        namelog.addEventListener('click',()=>{
+             btnl.style.display='block';
+        })
+    }
+    end.addEventListener('click',()=>{
+        localStorage.clear();
+        location.href='index.html'
+    })
    let pro=document.getElementById('loca');
   // console.log(pro)
    pro.addEventListener('click',()=>{
       location.href='product.html'
    })
    if(token){
-    fetch(`https://blue-thoughtful-ox.cyclic.app/cart/`,{
+    fetch(`https://blue-thoughtful-ox.cyclic.app//cart/`,{
                     headers:{'content-type':'application/json',
                              'Authorization':`Bearer ${token}`
                             }

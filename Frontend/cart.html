@@ -58,7 +58,7 @@
    fetchandrender();
 
     function fetchandrender(){
-        fetch(`http://localhost:3500/cart`,{
+        fetch(`https://blue-thoughtful-ox.cyclic.app/cart/`,{
             method:"GET",
             headers:{'content-type':'application/json',
             'Authorization':`Bearer ${token}`
@@ -74,6 +74,7 @@
             datac=res;
             display(res);
             btnch.innerText='Checkout cart'
+            btnch.style.display='block'
             btnch.addEventListener('click',()=>{
                 location.href='delivery.html'
             })
@@ -149,7 +150,7 @@
             }
                 console.log(obj)
             
-            fetch(`http://localhost:3500/cart/update/${element._id}`,{
+            fetch(`https://blue-thoughtful-ox.cyclic.app//cart/update/${element._id}`,{
                 method:"PATCH",
                 body:JSON.stringify(obj),
                 headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
@@ -175,7 +176,7 @@
             }
                 console.log(obj)
             
-            fetch(`http://localhost:3500/cart/update/${element._id}`,{
+            fetch(`https://blue-thoughtful-ox.cyclic.app//cart/update/${element._id}`,{
                 method:"PATCH",
                 body:JSON.stringify(obj),
                 headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
@@ -192,7 +193,7 @@
          btndel.innerText='Remove';
          btndel.setAttribute('id','rem')
          btndel.addEventListener('click',()=>{
-            fetch(`http://localhost:3500/cart/delete/${element._id}`,{
+            fetch(`https://blue-thoughtful-ox.cyclic.app//cart/delete/${element._id}`,{
                 method:"DELETE",
                 headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
             })

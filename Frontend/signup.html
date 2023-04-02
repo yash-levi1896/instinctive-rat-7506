@@ -78,7 +78,7 @@
             Name:form.name.value,
             password:form.pass.value
         }
-        fetch(`http://localhost:3500/user/register`,{
+        fetch(`https://blue-thoughtful-ox.cyclic.app//user/register`,{
             method:"POST",
             headers:{'content-type':'application/json'},
             body:JSON.stringify(obj)

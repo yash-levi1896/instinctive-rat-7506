@@ -162,6 +162,7 @@ nav>div div:nth-child(3){
 }
 
 #chk{
+  display: none;
   width:10%;
   margin: auto;
   background-color: red;
