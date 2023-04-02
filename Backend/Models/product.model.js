@@ -5,7 +5,8 @@ const productSchema=mongoose.Schema({
     name:String,
     price:Array,
     category:String,
-    deposit_fee:Number
+    deposit_fee:Number,
+    city:String
 })
 
 const ProductModel=mongoose.model("product",productSchema)

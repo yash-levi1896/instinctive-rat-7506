@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="product.css">
+    <script src="https://kit.fontawesome.com/b95f450ab5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    <nav class="stiky">
+        <div>
+        <div>
+            <a href="index.html"><img src="./logo.png" alt=""></a>
+           <select name="" id="cityp">
+            <option value="">Select city</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+           </select>
+        </div>
+        <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search for a product"
+            />
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+          </div>
+        <div>
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="font-size: 25px;margin-right: 0px;"></i></a>
+        <span id="c-number" style="margin-left: 0px;"></span>
+            <button id="login">Log in</button>
+        </div>
+        </div> 
+    </nav>
+    <div id="lownav">
+       
+        <div>
+            <p>Home ></p>
+            <p>Furniture</p>
+        </div>
+       
+    </div>
+    <select id="duration">
+        <option value="">select duration</option>
+        <option value="3">3 months</option>
+        <option value="6">6 months</option>
+        <option value="12">12+ months</option>
+    </select>
+    <select id="category">
+        <option value="">select category</option>
+        <option value="Beds">Beds</option>
+        <option value="Dressers">Dressers</option>
+        <option value="Sofa">Sofa</option>
+        <option value="TV Units">TV Units</option>
+        <option value="Bookshelves">Bookshelves</option>
+    </select>
+    <!-- middle section -->
+    <div id="card">
+        <!-- append cards here -->
+    </div>
+     
+    <footer>
+        <div id="detail">
+        <h4>LazyRent: Upgrade To Your Dream Lifestyle At An Unbelievably Low Price!</h4>
+        <p>RentoMojo is your ticket to a better lifestyle in India. We provide designer furniture, the newest gadgets, and bestselling appliances on rent in major Indian cities. You can use the best products available in the market at just a fraction of their retail value. You pay us a small monthly fee, which becomes lesser the longer you rent from us.</p>
+        <p>Besides saving you money, we do our best to provide you with an exceptional, super-comfortable rental experience. Our ordering process is straightforward and efficient. You can order from us in a matter of minutes from your PC or smartphone. We offer speedy delivery in major Indian cities, namely Bangalore, Mumbai, Delhi, Chennai, Pune, Hyderabad, Gurgaon, and Noida.</p>
+        <p>No matter what product you rent from us, we will provide you with several complementary benefits with it. The benefits range from a yearly product swap option to a periodic free maintenance service. These are benefits no regular retailer offers. Start renting now!</p>
+       </div>
+        <div id="foot">
+        <div>
+            <h3>Lazy Rents</h3>
+            <p>About us</p>
+            <p>Culture</p>
+            <p>Investors</p>
+            <p>Careers</p>
+            <p>Contact</p>
+            <p>Our Benefits</p>
+            <p>Sitemap</p>
+        </div>
+        <div>
+          <h3>INFORMATION</h3>  
+           <p>Blog</p>
+           <p>FAQs</p>
+           <p>Documents Required</p>
+        </div>
+        <div>
+           <h3>POLICIES</h3> 
+            <p>Shipping Policy</p>
+            <p>Cancellation & Return</p>
+            <p>Privacy Policy</p>
+            <p>Rental Terms & Conditions</p>
+            <p>Referral Terms & Conditions</p>
+        </div>
+        <div>
+            <h3>Need Help ?</h3>
+            <button>chat with us (9 A.M to 6 P.M)</button>
+            <p>Lazyrent.com</p>
+            <h4>DOWNLOAD APP</h4>
+            <img src="./Screenshot (72).png" alt="">
+            <img src="./Screenshot (73).png" alt="">
+        </div>
+        </div>
+        <div id="last">
+            <p>© 2023. Edunetwork Pvt. Ltd.</p>
+            <div>
+            <i class="fa-brands fa-facebook" style="font-size:25px;"></i>
+            <i class="fa-brands fa-instagram" style="font-size:25px;"></i>
+            <i class="fa-brands fa-twitter" style="font-size:25px;"></i>
+            <i class="fa-brands fa-linkedin" style="font-size:25px;"></i>
+            <i class="fa-brands fa-youtube" style="font-size:25px;"></i>
+            </div>
+            <button id="top">Got UP</button>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+    let parent=document.getElementById('card');
+    let selcity=document.getElementById('cityp');
+    let selcat=document.getElementById('category');
+    let btnlog=document.getElementById('login');
+    const username=localStorage.getItem('key1');
+    let token=localStorage.getItem('key');
+    const namelog=document.getElementById('login');
+    let btn=document.getElementById('top');
+    let c_size=document.getElementById('c-number');
+    let durselect=document.getElementById('duration');
+    btn.addEventListener('click',()=>{
+        document.documentElement.scrollTop = 0;
+    })
+    let data=[];
+    username ?  namelog.innerText=username: namelog.innerText='login'
+    token ? token=token:token="";
+    selcat.addEventListener('change',()=>{
+        fetch(`http://localhost:3500/product/${selcity.value}/${selcat.value}`)
+        .then(res=>res.json())
+        .then((res)=>{
+            console.log(res);
+           // localStorage.setItem('city',select.value)
+           parent.innerHTML=""
+            display(res)
+        })
+    })
+    selcity.addEventListener('change',()=>{
+        fetch(`http://localhost:3500/product/${selcity.value}`)
+        .then(res=>res.json())
+        .then((res)=>{
+            console.log(res);
+           // localStorage.setItem('city',select.value)
+            display(res)
+        })
+    })
+    if(token){
+        fetch(`http://localhost:3500/cart/`,{
+                    headers:{'content-type':'application/json',
+                             'Authorization':`Bearer ${token}`
+                            }
+                })
+                .then(res=>res.json())
+                .then((res)=>{
+                    c_size.innerText=res.length;
+                    //console.log(res)
+                })
+    }
+    
+    fetch(`http://localhost:3500/product`)
+        .then(res=>res.json())
+        .then((res)=>{
+            console.log(res);
+            for(let i=0;i<7;i++){
+                data.push(res[i])
+            }
+            //localStorage.setItem('city',select.value)
+            display(data)
+        })
+    function display(data){
+        data.forEach(element => {
+            let card=document.createElement('div');
+            let img=document.createElement('img')
+            img.src=element.image;
+            card.append(img);
+            child=document.createElement('div');
+            let title=document.createElement('h3');
+            title.innerText=element.name;
+            let price=document.createElement('p');
+            price.innerText=`Rs.${element.price[0]}`
+            durselect.addEventListener('change',()=>{
+                if(durselect.value==""||durselect.value==3){
+                    price.innerText=`Rs.${element.price[0]}`
+                }
+                else if(durselect.value==6){
+                    price.innerText=`Rs.${element.price[1]}`
+                }else{
+                    price.innerText=`Rs.${element.price[2]}`
+                }
+            });
+            
+            let btn=document.createElement('button');
+            btn.innerText='Add to cart';
+            btn.addEventListener('click',()=>{
+                element.quantity=1;
+                fetch(`http://localhost:3500/cart/add`,{
+                    method:"POST",
+                    body:JSON.stringify(element),
+                    headers:{'content-type':'application/json',
+                             'Authorization':`Bearer ${token}`
+                }
+                })
+                .then(res=>res.json())
+                .then((res)=>{
+                    alert(res.msg);
+                    fetch(`http://localhost:3500/cart/`,{
+                    headers:{'content-type':'application/json',
+                             'Authorization':`Bearer ${token}`
+                }
+                })
+                .then(res=>res.json())
+                .then((res)=>{
+                    if(token){
+                        c_size.innerText=res.length;
+                    }
+                   
+                    //console.log(res)
+                })
+                })
+                
+            })
+            child.append(card,title,price,btn);
+            parent.append(child);
+        });
+    }
+
+</script>
+</script>
+</html>

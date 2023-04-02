@@ -1,0 +1,218 @@
+nav{
+    /* margin-top: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding: 2px; */
+    display: flex;
+    align-items: center;
+    margin-bottom:0px;
+  }
+nav>div{
+    display: flex;
+    width:70%;
+      /* border:1px solid red;  */
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+    padding: 10px;
+}
+nav>div div:nth-child(3)>button{
+    padding:10px;
+    width:100px;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    /* border: none; */
+}
+nav>div div:nth-child(3){
+    width: 200px;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* search bar */
+.search-box {
+    width: 700px;
+    position: relative;
+    display: flex;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+     /* border: 2px solid red;  */
+    /* margin-left: 105px; */
+    /* margin-top: -30px; */
+  }
+  
+  .search-input {
+    width: 99%;
+    height: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    padding: 15px 45px 15px 15px;
+    background-color: #eaeaeb;
+    /* color: #6c6c6c; */
+    border-radius: 6px;
+    border:none;
+    padding: 20px;
+    transition: all .4s;
+  }
+  
+  .search-input:focus {
+    border:none;
+    outline:none;
+    box-shadow: 0 3px 12px #dacc08;
+    -moz-box-shadow: 0 3px 12px #8dafe1;
+    -webkit-box-shadow: 0 3px 12px #788dac;
+  }
+  
+  .search-btn {
+    background-color: transparent;
+    font-size: 18px;
+    padding: 6px 9px;
+    margin-left:-45px;
+    border:none;
+    color: #6c6c6c;
+    transition: all .4s;
+    z-index: 10;
+  }
+  
+  .search-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    color: black;
+  }
+  
+  .search-btn:focus {
+    outline:none;
+    color:black;
+  }
+
+  #lownav{
+    display: flex;
+    /* border: 1px solid red; */
+    /* margin-top: 0%; */
+    justify-content: center;
+  }
+  #lownav>div{
+    display: flex;
+    /* border: 1px solid red; */
+    width:10%;
+    margin: auto;
+    text-align: center;
+    
+  }
+  #duration{
+    margin-left: 290px;
+    margin-top: 20px;
+  }
+
+  /* append cards */
+
+  #card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    /* border: 1px solid red; */
+    width:70%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  #card>div{
+    /* border: 1px solid red; */
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  }
+  #card>div button{
+    display: block;
+    margin: auto;
+    padding:10px;
+    border-radius: 10px;
+    color: white;
+    background-color: red;
+    border: none;
+  }
+  #card>div button:hover{
+      background-color: white;
+      color:red
+  }
+  #card>div img{
+    width:100%;
+    padding: 20px;
+  }
+  #card>div h3{
+    padding-left: 20px;
+  }
+  #card>div p{
+    padding-left: 20px;
+  }
+
+  footer{
+    background-color: whitesmoke;
+    margin-top: 50px;
+}
+
+#foot{
+    border-bottom: 1px solid rgb(213, 209, 209);
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+#foot>div:nth-child(4)>button{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+#foot>div:nth-child(4)>h4{
+    margin-bottom: 5px;
+}
+#foot>div:nth-child(4)>img{
+    height: 40px;
+    width:100px;
+}
+#last{
+    /* border:1px solid red; */
+    display: flex;
+    width:80%;
+    margin: auto;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+#last>div{
+    /* border:1px solid red; */
+    width:200px;
+    display: flex;
+    justify-content: space-around;
+}
+#last>button{
+    border: none;
+    padding: 5px;
+    background-color: white;
+}
+#footer>h2{
+    margin-bottom: 0px;
+}
+#footer>p:nth-child(1){
+    margin-top: 0px;
+}
+#detail{
+    width:70%;
+    margin:auto;
+    margin-bottom: 50px;
+    padding-top: 50px;
+}
+#detail>h4{
+    margin-bottom: 0px;
+}
+#detail>p:nth-child(1){
+    margin-top: 0px;
+    border: 1px solid red;
+}

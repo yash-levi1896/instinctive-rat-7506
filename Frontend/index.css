@@ -1,17 +1,20 @@
-.sticky {
-    position: -webkit-sticky;
-    top: 0;
-    width: 100%;
+
+  nav{
+    /* margin-top: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding: 2px; */
+    display: flex;
+    align-items: center;
   }
 nav>div{
     display: flex;
     width:70%;
-    border:1px solid red;
+     /* border:1px solid red;  */
     margin: auto;
     justify-content: space-between;
     margin-bottom: 50px;
-    position: sticky;
-    top: 0;
+    align-items: center;
+    padding: 10px;
 }
 nav>div div:nth-child(3)>button{
     padding:10px;
@@ -23,7 +26,7 @@ nav>div div:nth-child(3)>button{
 }
 nav>div div:nth-child(3){
     width: 200px;
-    border:1px solid red;
+    /* border:1px solid red; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -37,7 +40,7 @@ nav>div div:nth-child(3){
       left: 0;
       right: 0;
       margin: auto;
-     border: 2px solid red; 
+     /* border: 2px solid red;  */
     /* margin-left: 105px; */
     /* margin-top: -30px; */
   }
@@ -49,9 +52,10 @@ nav>div div:nth-child(3){
     font-size: 16px;
     padding: 15px 45px 15px 15px;
     background-color: #eaeaeb;
-    color: #6c6c6c;
+    /* color: #6c6c6c; */
     border-radius: 6px;
     border:none;
+    padding: 20px;
     transition: all .4s;
   }
   
@@ -84,7 +88,13 @@ nav>div div:nth-child(3){
     outline:none;
     color:black;
   }
-
+  #log{
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+  }
 
 footer{
     background-color: whitesmoke;
@@ -157,7 +167,7 @@ footer{
 #middle-sect{
     width:70%;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 #middle-sect>div{
@@ -178,7 +188,50 @@ footer{
 #middle-sect>div p{
     margin-top: 0px;
 }
-
+#middle-sect>h2{
+    border-bottom: 2px solid red;
+    margin-bottom: 40px;
+    width:15%;
+}
+#heading{
+    width:70%;
+    margin: auto;
+    /* border-bottom: 1px solid red; */
+    margin-top: 50px;
+}
+#heading h3{
+   border-bottom: 2px solid red;
+   width:190px;
+}
+#datappend{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    /* border: 1px solid red; */
+    width:70%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+#datappend img{
+    width: 100%;
+    padding:20px;
+}
+#datappend>div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+#datappend>div h3{
+    /* border: 1px solid red; */
+    padding-left: 10px;
+   
+}
+#datappend>div p{
+    /* border: 1px solid red; */
+    padding-left: 10px;
+   
+}
 /* top section */
 
 #category{

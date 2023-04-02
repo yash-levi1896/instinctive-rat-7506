@@ -1,110 +1,44 @@
 [
    {
-    
-"image":"https://p.rmjo.in/productSquare/bld2hije-500x500.jpg",
-"name":"Casper 1-Seater Fabric Sofa(Grey)",
-"price":[369,299,199],
-
-     "category":"Sofa",
-
-     "deposit_fee":1199
+     "image":"https://p.rmjo.in/productSquare/6q17z1ay-500x500.jpg",
+     "name":"Pixar TV Unit",
+     "category":"TV Units",
+     "price":[289,199,150],
+     "deposit_fee":900,
+     "city":"Kolkata"
    },
    {
-     "image":"https://p.rmjo.in/productSquare/sm454qim-500x500.jpg",
-     "name":"Aurora Wooden Queen Bed (6x5)",
-     "category":"Beds",
-     "price":[669,599,499],
-     "deposit_fee":1500
+     "image":"https://p.rmjo.in/productSquare/5pc0nm7w-500x500.jpg",
+     "name":"Java Center Table/ TV Unit",
+     "category":"TV Units",
+     "price":[139,99,59],
+     "deposit_fee":510,
+     "city":"Kolkata"
    },
    {
-     "image":"https://p.rmjo.in/productSquare/z0b45rr0-500x500.jpg",
-     "name":"Napster Metal Single Bed (6x3)",
-     "category":"Beds",
-     "price":[309,259,199],
-     "deposit_fee":1200
+     "image":"https://p.rmjo.in/productSquare/fgm22vkb-500x500.jpg",
+     "name":"Lack TV Bench",
+     "category":"TV Units",
+     "price":[99,70,59],
+     "deposit_fee":299,
+     "city":"Kolkata"
    },
    {
-     "image":"https://p.rmjo.in/productSquare/0pernjgh-500x500.jpg",
-     "name":"Aurora Wooden Single Bed (6x3)",
-     "category":"Beds",
-     "price":[519,479,399],
-     "deposit_fee":2100
+     "image":"https://p.rmjo.in/productSquare/khai5gzi-500x500.jpg",
+     "name":"Marvel TV Unit",
+     "category":"TV Units",
+     "price":[179,99,59],
+     "deposit_fee":360,
+     "city":"Kolkata"
    },
    {
-     "image":"https://p.rmjo.in/productSquare/e5qwec0i-500x500.jpg",
-     "name":"Poise Wooden Single Bed (6.5x3)",
-     "category":"Beds",
-     "price":[519,439,399],
-     "deposit_fee":1950
-   },
-   {
-     "image":"https://p.rmjo.in/productSquare/q5cw4jfm-500x500.jpg",
-     "name":"Poise Wooden King Bed (6x6)",
-     "category":"Beds",
-     "price":[839,709,599],
-     "deposit_fee":3100
-   },
-   {
-     "image":"https://p.rmjo.in/productSquare/gk7ellw1-500x500.jpg",
-     "name":"Kipper Wooden Queen Bed (6x5)",
-     "category":"Beds",
-     "price":[1019,999,899],
-     "deposit_fee":4100
-   },
-   {
-     "image":"https://p.rmjo.in/productSquare/jfd4uk64-500x500.jpg",
-     "name":"Atticus Wooden Single Platform Bed (6x3)",
-     "category":"Beds",
-     "price":[419,359,299],
-     "deposit_fee":1200
-   },
-   {
-     "image":"https://p.rmjo.in/productSquare/0npj0a1d-500x500.jpg",
-     "name":"Kipper Wooden Single Bed (6x3)",
-     "category":"Beds",
-     "price":[559,499,399],
-     "deposit_fee":1700
-   },
-   {
-     "image":"https://p.rmjo.in/productSquare/pemzyedy-500x500.jpg",
-     "name":"Napster Metal Queen Bed (White 6x5)",
-     "category":"Beds",
-     "price":[609,539,409],
-     "deposit_fee":1850
-   },
-   {
-    "image":"https://p.rmjo.in/productSquare/pemzyedy-500x500.jpg",
-     "name":"Napster Metal Queen Bed (White 6x5)",
-     "category":"Beds",
-     "price":[609,569,499],
-     "deposit_fee":1780
-   },
-   {
-    "image":"https://p.rmjo.in/productSquare/9o9eoir3-500x500.jpg",
-     "name":"Garfield Ottoman",
-     "category":"Beds",
-     "price":[189,109,89],
-     "deposit_fee":600
-   },
-   {
-    "image":"https://p.rmjo.in/productSquare/smr3l0tl-500x500.jpg",
-    "name":"Rex 3-Seater Leather Sofa (Black)",
-    "category":"Beds",
-    "price":[819,759,699],
-    "deposit_fee":2400
-   },
-   {
-    "image":"ttps://p.rmjo.in/productSquare/smr3l0tl-500x500.jpg",
-    "name":"Felix 1-Seater Fabric Sofa (Blue)",
-    "category":"Beds",
-    "price":[439,399,239],
-    "deposit_fee":1350
-   },
-   {
-    "image":"https://p.rmjo.in/productSquare/tqddqxw9-500x500.jpg",
-    "name":"Rex 1-Seater Leather Sofa (Black)",
-    "category":"Beds",
-    "price":[399,309,259],
-    "deposit_fee":1139
+     "image":"https://p.rmjo.in/productSquare/t0ebqxbs-500x500.jpg",
+     "name":"PS Cabinet by IKEA",
+     "category":"TV Units",
+     "price":[479,399,339],
+     "deposit_fee":1440,
+     "city":"Kolkata"
    }
 ]
+
+

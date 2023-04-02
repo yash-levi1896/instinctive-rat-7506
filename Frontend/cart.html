@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <script src="https://kit.fontawesome.com/b95f450ab5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="stiky">
+        <div>
+        <div>
+        <a href="index.html"><img src="./logo.png" alt=""></a>
+        </div>
+        <div class="search-box">
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search for a product"
+            />
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+          </div>
+        <div>
+            <i class="fa-solid fa-cart-shopping" style="font-size: 25px;"></i><span id="c-number"></span>
+            <button id="login">Log in</button>
+        </div>
+        </div> 
+    </nav>
+    <div id="order">
+        
+
+    </div>
+    <h1 id="cart"></h1>
+    <div id="parent">
+     <!-- append cards here -->
+    </div>
+    <button id="chk"></button>
+</body>
+<script>
+    let parent=document.getElementById('order');
+    let parent1=document.getElementById('parent');
+    let cartsize=document.getElementById('c-number');
+    let token=localStorage.getItem('key');
+    const username=localStorage.getItem('key1');
+    const namelog=document.getElementById('login');
+    const cart=document.getElementById('cart');
+    const btnch=document.getElementById('chk');
+
+    let datac=[];
+
+    token ? token=token:token="";
+    username ?  namelog.innerText=username: namelog.innerText='login'
+   fetchandrender();
+
+    function fetchandrender(){
+        fetch(`http://localhost:3500/cart`,{
+            method:"GET",
+            headers:{'content-type':'application/json',
+            'Authorization':`Bearer ${token}`
+        }
+        
+        })
+     .then(res=>res.json())
+     .then((res)=>{
+        if(res.length===0){
+            display1();
+        }
+        else{
+            datac=res;
+            display(res);
+            btnch.innerText='Checkout cart'
+            btnch.addEventListener('click',()=>{
+                location.href='delivery.html'
+            })
+           cartsize.innerText=res.length;
+        }
+     })
+    }
+     
+     
+     function display(data){
+        parent1.innerHTML="";
+       // parent.innerHTML="";
+        data.forEach(element => {
+            let card=document.createElement('div');
+            let img=document.createElement('img')
+            img.src=element.image;
+            card.append(img);
+            child=document.createElement('div');
+            let title=document.createElement('h3');
+            title.innerText=element.name;
+
+            let durselect=document.createElement('select')
+             let opt3=document.createElement('option');
+             opt3.value=3;
+             opt3.innerText='3 Months';
+             let opt6=document.createElement('option');
+             opt6.value=6;
+             opt6.innerText='6 Months';
+             let opt12=document.createElement('option');
+             opt12.value=12;
+             opt12.innerText='12+ Months';
+             durselect.append(opt3,opt6,opt12);
+             durselect.setAttribute('id','selec')
+
+            let price=document.createElement('p');
+            price.innerText=`Rs.${element.price[0]}`
+            durselect.addEventListener('change',()=>{
+                if(durselect.value==3){
+                    price.innerText=`Rs.${element.price[0]}`
+                    let sum=0;
+                    for(let i=0;i<datac.length;i++){
+                      sum+=datac[i].price[0] * datac[i].quantity;
+                      }
+                     document.getElementById("cart").innerText=`order Total: ${sum}`;
+                }
+                else if(durselect.value==6){
+                    price.innerText=`Rs.${element.price[1]}`
+
+                    let sum=0;
+                    for(let i=0;i<datac.length;i++){
+                      sum+=datac[i].price[0] * datac[i].quantity;
+                      }
+                      sum=sum-element.quantity*element.price[0]+element.quantity*element.price[1];
+                     document.getElementById("cart").innerText=`order Total: ${sum}`;
+                }else{
+                    price.innerText=`Rs.${element.price[2]}`
+
+                    let sum=0;
+                    for(let i=0;i<datac.length;i++){
+                      sum+=datac[i].price[0] * datac[i].quantity;
+                      }
+                      sum=sum-element.quantity*element.price[0]+element.quantity*element.price[2];
+                     document.getElementById("cart").innerText=`order Total: ${sum}`;
+                }
+            });
+            let btni=document.createElement("button")
+        btni.innerText="+";
+        btni.setAttribute('id','inb')
+        btni.addEventListener('click',()=>{
+            element.quantity=element.quantity+1
+            let obj={
+                quantity:element.quantity
+            }
+                console.log(obj)
+            
+            fetch(`http://localhost:3500/cart/update/${element._id}`,{
+                method:"PATCH",
+                body:JSON.stringify(obj),
+                headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
+            })
+            .then(res=>res.json())
+            .then((res)=>{
+                console.log(res);
+                fetchandrender();
+            })
+            
+        })
+        let quant=document.createElement("span");
+        quant.innerText=element.quantity;
+        // decrease the quantity
+        let btnd=document.createElement("button")
+        btnd.innerText="-";
+        btnd.setAttribute('id','deb')
+        btnd.addEventListener('click',()=>{
+            if(element.quantity>1){
+            element.quantity=element.quantity-1;
+            let obj={
+                quantity:element.quantity
+            }
+                console.log(obj)
+            
+            fetch(`http://localhost:3500/cart/update/${element._id}`,{
+                method:"PATCH",
+                body:JSON.stringify(obj),
+                headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
+            })
+            .then(res=>res.json())
+            .then((res)=>{
+                console.log(res);
+                fetchandrender();
+            })
+        }  
+        });
+        // delete the item from cart
+        let btndel=document.createElement('button');
+         btndel.innerText='Remove';
+         btndel.setAttribute('id','rem')
+         btndel.addEventListener('click',()=>{
+            fetch(`http://localhost:3500/cart/delete/${element._id}`,{
+                method:"DELETE",
+                headers:{'content-type':'application/json','Authorization':`Bearer ${token}`}
+            })
+            .then(res=>res.json())
+            .then((res)=>{
+                alert(res.msg);
+                fetchandrender();
+            })
+         })
+            child.append(card,title,price,btni,quant,btnd,durselect,btndel);
+            parent1.append(child);
+        });
+       
+    let sum=0;
+  for(let i=0;i<datac.length;i++){
+    sum+=datac[i].price[0] * datac[i].quantity;
+  }
+  document.getElementById("cart").innerText=`order Total: ${sum}`;
+
+
+
+     }
+
+     function display1(){
+        parent1.innerHTML="";
+        parent.innerHTML="";
+          let head=document.createElement('h1');
+          head.innerText='Your Cart is Empty';
+          head.style.textAlign='center';
+          let image=document.createElement('img')
+          image.src='https://www.rentomojo.com/public/images/error/no-cart.png';
+          image.style.display='block';
+          image.style.margin='auto';
+          parent.append(image,head);
+     }
+
+     function display2(data){
+         let heading=document.getElementById('h3');
+         heading.innerText='Order Summary';
+         let sumd=0;
+         data.forEach(element=>{
+             sum+=element.deposit_fee;
+         })
+         let fee=document.getElementById('p');
+         fee.innerText=`Payable Now ${sumd}`;
+         parent.append(heading,fee)
+     }
+</script>
+</html>

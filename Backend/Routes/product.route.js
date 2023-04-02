@@ -3,8 +3,27 @@ const {ProductModel}=require('../Models/product.model')
 const productRoute=express.Router();
 
 productRoute.get("/",async (req,res)=>{
+   // console.log(req.query)
     try {
         const product=await ProductModel.find();
+        res.status(200).send(product)
+    } catch (error) {
+        res.status(400).send({msg:error.message})
+    }
+})
+productRoute.get("/:city",async (req,res)=>{
+   // console.log(req.query)
+    try {
+        const product=await ProductModel.find(req.params);
+        res.status(200).send(product)
+    } catch (error) {
+        res.status(400).send({msg:error.message})
+    }
+})
+productRoute.get("/:city/:category",async (req,res)=>{
+   // console.log(req.query)
+    try {
+        const product=await ProductModel.find(req.params);
         res.status(200).send(product)
     } catch (error) {
         res.status(400).send({msg:error.message})
