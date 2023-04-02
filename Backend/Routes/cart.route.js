@@ -12,7 +12,8 @@ cartRoute.get("/",async (req,res)=>{
 })
 
 cartRoute.post("/add",async (req,res)=>{
-       let product=await CartModel.find(req.body);
+    const {name}=req.body;
+       let product=await CartModel.find({name});
        if(product.length===0){
         try {
             const cart=await new CartModel(req.body);
@@ -42,7 +43,7 @@ cartRoute.patch("/update/:cartID",async(req,res)=>{
     const {cartID}=req.params;
     try {
         await CartModel.findByIdAndUpdate({_id:cartID},req.body);
-        res.status(200).send({msg:"item got deleted"})
+        res.status(200).send({msg:"item got updated"})
     } catch (error) {
         res.status(400).send({msg:error.message});
     }

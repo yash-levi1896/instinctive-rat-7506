@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/b95f450ab5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
     <nav class="stiky">
         <div>
         <div>
-           <img src="./logo.png" alt="">
+            <a href="index.html"><img src="./logo.png" alt=""></a>
         </div>
         <div class="search-box">
             <input
@@ -27,8 +27,9 @@
             <button class="search-btn"><i class="fa fa-search"></i></button>
           </div>
         <div>
-            <i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i><span id="c-number"></span>
-            <button>Log in</button>
+          <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="font-size: 25px;"></i></a>
+          <span id="c-number" style="margin-left: 0px;"></span>
+          <a href="login.html"><button id="log">Log in</button></a>
         </div>
         </div> 
     </nav>
@@ -85,7 +86,7 @@
         <div>
             <img src="./image-top1.png" alt="">
         </div>
-        <div>
+        <div id="loca">
             <img src="./image-top2.png" alt="">
         </div>
         <div>
@@ -98,7 +99,54 @@
             <img src="./image-top5.png" alt="">
         </div>
     </div>
-
+    
+    <div id="heading">
+        <h3>You'll love to take these home</h3>
+    </div>
+    <div id="datappend">
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/sm454qim-500x500.jpg" alt="">
+            </div>
+            <h3>Aurora Wooden Queen Bed (6x5)</h3>
+            <p>RS 669</p>
+        </div>
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/z0b45rr0-500x500.jpg" alt="">
+            </div>
+            <h3>Napster Metal Single Bed (6x3)</h3>
+            <p>RS 309</p>
+        </div>
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/smr3l0tl-500x500.jpg" alt="">
+            </div>
+            <h3>Rex 3-Seater Leather Sofa (Black)</h3>
+            <p>RS 819</p>
+        </div>
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/pfbjfjzr-500x500.jpg" alt="">
+            </div>
+            <h3>Betty Dresser with Stool</h3>
+            <p>RS 249</p>
+        </div>
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/4icn729s-500x500.jpg" alt="">
+            </div>
+            <h3>Brooklyn 1-Seater Fabric Sofa</h3>
+            <p>RS 439</p>
+        </div>
+        <div>
+            <div>
+                <img src="https://p.rmjo.in/productSquare/6q17z1ay-500x500.jpg" alt="">
+            </div>
+            <h3>Pixar TV Unit</h3>
+            <p>RS 289</p>
+        </div>
+    </div>
 
     
     <div id="middle-sect">
@@ -190,8 +238,40 @@
             <i class="fa-brands fa-linkedin" style="font-size:25px;"></i>
             <i class="fa-brands fa-youtube" style="font-size:25px;"></i>
             </div>
-            <button>Got UP</button>
+            <button id="top">Got UP</button>
         </div>
     </footer>
 </body>
+<script>
+    let select=document.getElementById('sel');
+    let parent=document.getElementById('datappend');
+    let btn=document.getElementById('top');
+    let cartsize=document.getElementById('c-number')
+    let token=localStorage.getItem('key');
+    const username=localStorage.getItem('key1');
+    const namelog=document.getElementById('log');
+    btn.addEventListener('click',()=>{
+        document.documentElement.scrollTop = 0;
+    })
+    token ? token=token:token="";
+    username ?namelog.innerText=username:namelog.innerText='Login';
+   let pro=document.getElementById('loca');
+  // console.log(pro)
+   pro.addEventListener('click',()=>{
+      location.href='product.html'
+   })
+   if(token){
+    fetch(`https://blue-thoughtful-ox.cyclic.app/cart/`,{
+                    headers:{'content-type':'application/json',
+                             'Authorization':`Bearer ${token}`
+                            }
+                })
+                .then(res=>res.json())
+                .then((res)=>{
+                    cartsize.innerText=res.length;
+                    //console.log(res)
+                })
+   }
+   
+</script>
 </html>

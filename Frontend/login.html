@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+           margin: 0px;
+        }
+     *{
+         box-sizing: border-box;
+     }
+      #container{
+         /* border: 1px solid red; */
+         padding-top: 30px;
+         padding-bottom: 30px;
+         width:20%;
+         margin: auto;
+         padding:20px;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+         margin-top: 30px;
+     
+      }
+      .nav{
+         /* border:1px solid blue; */
+         display: flex;
+         justify-content: space-between;
+      }
+      .nav a{
+         text-decoration: none;
+         color:black
+      }
+     #signin form{
+         display: flex;
+         flex-direction: column;
+         
+     }
+     #signin input{
+         padding:15px;
+         margin-bottom: 10px;
+         border-radius: 5px;
+     }
+     #signin input:nth-child(3){
+           background-color:red ;
+           color:white;
+     }
+     </style>
+</head>
+<body>
+    <div id="container">
+        <div class="nav">
+          <a href="./signup.html">Signup</a>
+          <!-- <a href="./signin.html">Signin</a> -->
+          <a href="./index.html">Home</a>
+        </div>
+        <div id="signin">
+          <h1 id="heading">Please Enter Your Details</h1>
+          <form>
+            <input type="email" id="email"placeholder="Enter Your Email" />
+            <input type="password" id="password" placeholder="Enter Password" />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+        </div>
+</body>
+<script>
+    let form=document.querySelector('#signin>form');
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        let obj={
+            email:form.email.value,
+            password:form.password.value
+        }
+        fetch(`http://localhost:3500/user/login`,{
+            method:"POST",
+            body:JSON.stringify(obj),
+            headers:{
+              'content-type':'application/json'}
+        })
+        .then(res=>res.json())
+        .then((res)=>{
+            localStorage.setItem('key',res.token);
+            localStorage.setItem('key1',res.Name);
+            alert(res.msg);
+            location.href='index.html'
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <style>
+        body{
+            background-image: url(https://images.pexels.com/photos/8960464/pexels-photo-8960464.jpeg?auto=compress&cs=tinysrgb&w=1600);
+        }
+        form{
+            display:flex;
+            flex-direction: column;
+            
+        }
+        form>input{
+            padding:20px;
+            margin-bottom: 10px;
+        }
+        form>input[type="submit"]{
+            background-color: red;
+            color:white;
+            font-size: 30px;
+            width:30%;
+            display: block;
+            margin: auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #divd{
+            text-align: center;
+            width:30%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-top: 30px;
+            
+        }
+        select{
+            margin-bottom: 10px;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divd">
+    <h1>Enter you delivery address</h1>
+    <form>
+        <input type="text" placeholder="Adress line 1">
+        <input type="text" placeholder="Adress line 2">
+        <input type="text" placeholder="Adress line 3">
+        <input type="text" placeholder="Enter pin code">
+        <input type="text" placeholder="Enter you city">
+        <input type="text" placeholder="Enter you state">
+        <select name="Payment" id="">
+            <option value="">Select payment option</option>
+            <option value="cas">Cash On delivery</option>
+        </select>
+        <input type="submit" value="submit">
+        
+    </form>
+    </div>
+</body>
+  <script>
+    let btn=document.querySelector("form");
+
+    btn.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        alert("Confirm order");
+        location.href="last.html";
+    })
+  </script>
+</html>
