@@ -70,9 +70,17 @@
 </body>
 <script>
       let form=document.querySelector('#signup form');
+      
       form.addEventListener('submit',(e)=>{
         e.preventDefault();
-        let obj={
+        if(form.email.value=="" ||
+            form.number.value==""||
+            form.name.value=="" ||
+            form.pass.value==""){
+                alert("All fields are required")
+            }
+        else{
+            let obj={
             email:form.email.value,
             Phone_No:form.number.value,
             Name:form.name.value,
@@ -87,6 +95,8 @@
         .then((res)=>{
             alert(res.msg)
         })
+        }
+        
       })
 
 </script>

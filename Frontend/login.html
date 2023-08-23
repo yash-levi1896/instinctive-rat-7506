@@ -69,7 +69,10 @@
     let form=document.querySelector('#signin>form');
     form.addEventListener('submit',(e)=>{
         e.preventDefault();
-        let obj={
+        if(form.email.value=="" || form.password.value==""){
+            alert("please fill both email and password")
+        }else{
+            let obj={
             email:form.email.value,
             password:form.password.value
         }
@@ -81,11 +84,19 @@
         })
         .then(res=>res.json())
         .then((res)=>{
-            localStorage.setItem('key',res.token);
-            localStorage.setItem('key1',res.Name);
-            alert(res.msg);
-            location.href='index.html'
+            if(res.msg=="Wrong credentials"){
+                 alert(res.msg)
+            }else{
+                localStorage.setItem('key',res.token);
+                localStorage.setItem('key1',res.Name);
+                alert(res.msg);
+                location.href='index.html'
+            }
+            
         })
+        }
+        
+        
     })
 </script>
 </html>
