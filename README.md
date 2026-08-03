@@ -101,13 +101,13 @@ https://sunny-semifreddo-5d63a1.netlify.app/
 ## Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
+git clone https://github.com/yash-levi1896/instinctive-rat-7506.git
 ```
 
 Move into the project directory
 
 ```bash
-cd <repository-name>
+cd instinctive-rat-7506
 ```
 
 ---
