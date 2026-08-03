@@ -1,4 +1,4 @@
-# 🛋️ Rentomojo Clone
+# 🛋️ RentZa
 
 A full-stack clone of **Rentomojo**, an online furniture rental platform that allows users to rent home furnishing products such as beds, wardrobes, sofas, TV units, study tables, and other household essentials. The application provides a seamless browsing and shopping experience with authentication, product management, cart functionality, and secure checkout.
 
@@ -60,7 +60,7 @@ The objective of this project was to build a full-stack furniture rental platfor
 
 ## 🏠 Home Page
 
-> *(Add screenshots here)*
+![Home](https://raw.githubusercontent.com/yash-levi1896/yash-levi1896.github.io/main/assets/img/Rentza/Rentza-1.png)
 
 ---
 
