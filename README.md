@@ -66,31 +66,25 @@ The objective of this project was to build a full-stack furniture rental platfor
 
 ## 🔐 Login & Signup
 
-> *(Add screenshots here)*
+![Login](https://raw.githubusercontent.com/yash-levi1896/yash-levi1896.github.io/main/assets/img/Rentza/Rentza-2.png)
 
 ---
 
 ## 🛋 Product Listing
 
-> *(Add screenshots here)*
+![ProductListing](https://raw.githubusercontent.com/yash-levi1896/yash-levi1896.github.io/main/assets/img/Rentza/Rentza-3.png)
 
 ---
 
 ## 📄 Product Details
 
-> *(Add screenshots here)*
-
----
-
-## 🛒 Cart
-
-> *(Add screenshots here)*
+![Details](https://raw.githubusercontent.com/yash-levi1896/yash-levi1896.github.io/main/assets/img/Rentza/Rentza-4.png)
 
 ---
 
 ## 💳 Checkout
 
-> *(Add screenshots here)*
+![Checkout](https://raw.githubusercontent.com/yash-levi1896/yash-levi1896.github.io/main/assets/img/Rentza/Rentza-5.png)
 
 ---
 
@@ -98,11 +92,7 @@ The objective of this project was to build a full-stack furniture rental platfor
 
 ### Frontend
 
-> *(Add Netlify/Vercel deployment link here)*
-
-### Backend
-
-> *(Add Render/Cyclic deployment link here)*
+https://sunny-semifreddo-5d63a1.netlify.app/
 
 ---
 
